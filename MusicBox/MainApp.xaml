@@ -1,0 +1,80 @@
+﻿<Page
+    x:Class="MusicBox.MainApp"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MusicBox"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Entity="using:MusicBox.Entity"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1366" Height="768">
+
+    <Grid Width="1366" Height="768">
+
+        <Image Source="assets/spectrum.gif" Height="766" Opacity="0.1" HorizontalAlignment="Center" VerticalAlignment="Top" />
+
+
+
+
+        <Image HorizontalAlignment="Center" Height="768" VerticalAlignment="Center" Width="1366" Source="Assets/miku.jpg" Opacity="0.445"/>
+        <Rectangle HorizontalAlignment="Center" Height="128" Margin="0,640,0,0" VerticalAlignment="Top" Width="1366" Opacity="0.94" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Transform3D>
+                <CompositeTransform3D RotationX="0"/>
+            </Rectangle.Transform3D>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF146C68"/>
+                    <GradientStop Color="#FF2CFFF5" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Grid HorizontalAlignment="Center" Height="600" VerticalAlignment="Center" Width="462" FocusVisualPrimaryBrush="{x:Null}" Margin="0,0,0,0">
+            <Grid HorizontalAlignment="Center" Height="110" Margin="0,10,0,0" VerticalAlignment="Top" Width="460"/>
+            <Grid HorizontalAlignment="Left" Height="480" VerticalAlignment="Top" Width="463" Grid.ColumnSpan="2">
+            </Grid>
+        </Grid>
+        <Image Source="assets/welcome.gif" Height="367" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-66,399,0,0" Width="351" Opacity="0.8" />
+        <TextBlock x:Name="txt_Welcome" HorizontalAlignment="Left" Margin="106,58,0,0" Text="HELLO PAGE MAIN" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="464" FontSize="24" TextAlignment="Center"/>
+        <Image HorizontalAlignment="Left" Height="142" Margin="164,560,0,0" VerticalAlignment="Top" Width="376" Source="Assets/shadow.png"/>
+        <ListView x:Name="MenuList"
+                  HorizontalAlignment="Left" Height="570" Margin="175,111,0,0" VerticalAlignment="Top" Width="338" FocusVisualSecondaryBrush="{x:Null}" FocusVisualPrimaryBrush="{x:Null}">
+            <ListView.Background>
+                <AcrylicBrush TintColor="#CC6CFFFF" FallbackColor="#FFE0E0E0" TintOpacity="0.2"/>
+            </ListView.Background>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Tapped="StackPanel_Tapped" Tag="{Binding FileIndex}">
+
+                        <Image Source="assets/note.gif" HorizontalAlignment="Left" VerticalAlignment="Center" Height="60" Width="60" Margin="10,0,0,5" Opacity="0.4"/>
+
+                        <TextBlock Text="{Binding FileName}" 
+                           Margin="20,5,20,8"
+                           FontSize="24"/>
+                        <TextBlock Text="{Binding FileSize}" 
+                           Margin="20,45,20,8"
+                           FontSize="16"/>
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+        <MediaElement MediaEnded="_mediaPlayerElement_MediaEnded" x:Name="_mediaPlayerElement" HorizontalAlignment="Left" Height="367" Margin="598,183,0,0" VerticalAlignment="Top" Width="613"/>
+        <StackPanel HorizontalAlignment="Left" Height="64" Margin="512,0,0,64" VerticalAlignment="Bottom" Width="841" Orientation="Horizontal" FocusVisualPrimaryBrush="{x:Null}">
+            <AppBarButton Click="Button_Click" HorizontalAlignment="Center" Icon="OpenFile" Label="Open" VerticalAlignment="Center" Foreground="#FF64FFDC"/>
+            <AppBarButton Click="Back_Click" HorizontalAlignment="Center" Icon="Back" Label="Back" VerticalAlignment="Center" Foreground="#FFFFF51D"/>
+            <AppBarButton x:Name="btnPlay" Click="Play_Click" HorizontalAlignment="Center" Icon="Play" Label="Play/Pause" VerticalAlignment="Center" Foreground="#FFFFF51D"/>
+            <AppBarButton Click="Next_Click" HorizontalAlignment="Center" Icon="Forward" Label="Next" VerticalAlignment="Center" Foreground="#FFFFF51D"/>
+            <ProgressBar Maximum="{Binding NaturalDuration.TimeSpan.TotalSeconds, ElementName=_mediaPlayerElement}" Minimum="0" x:Name="Progress" HorizontalAlignment="Center" Height="17" VerticalAlignment="Center" Width="408" Margin="10,0,0,0" Value="{Binding Position.TotalSeconds, ElementName=_mediaPlayerElement, Mode=OneWay}" Background="#FF62FFBF"/>
+            <Slider x:Name="volumeSlider" Maximum="100" Minimum="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="122" Height="38" Margin="10,0,0,0" FocusVisualPrimaryBrush="#FF2EFFEC" Background="#6669FFC2" ValueChanged="Slider_ValueChanged"/>
+        </StackPanel>
+        <TextBlock x:Name="debugText" HorizontalAlignment="Left" Margin="775,42,0,0" Text="Debug: " TextWrapping="Wrap" VerticalAlignment="Top" Width="284"/>
+        <Image HorizontalAlignment="Left" Height="45" Margin="795,672,0,0" VerticalAlignment="Top" Width="51" Source="Assets/eq.gif"/>
+        <Image HorizontalAlignment="Left" Height="72" Margin="927,670,0,0" VerticalAlignment="Top" Width="72" Source="Assets/playing.gif"/>
+        <TextBlock HorizontalAlignment="Left" Margin="842,689,0,0" Text="Now playing" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Height="31" Width="126" FontSize="20"/>
+        <TextBlock x:Name="nowPlaying" HorizontalAlignment="Left" Margin="982,694,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Height="29" Width="373" FontSize="16"/>
+        
+
+
+    </Grid>
+</Page>

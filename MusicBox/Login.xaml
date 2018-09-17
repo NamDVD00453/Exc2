@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="MusicBox.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MusicBox"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1366" Height="768">
+
+    <Grid Width="1366" Height="768">
+
+        <Image Source="assets/spectrum.gif" Height="766" Opacity="0.1" HorizontalAlignment="Center" VerticalAlignment="Top" />
+
+
+        <Image HorizontalAlignment="Center" Height="768" VerticalAlignment="Center" Width="1366" Source="Assets/miku.jpg" Opacity="0.445"/>
+        <Rectangle HorizontalAlignment="Center" Height="128" Margin="0,640,0,0" VerticalAlignment="Top" Width="1366" Opacity="0.56" Fill="{ThemeResource SystemControlForegroundAccentBrush}"/>
+        <Image HorizontalAlignment="Left" Height="271" Margin="439,524,0,0" VerticalAlignment="Top" Width="482" Source="Assets/shadow.png"/>
+        <Image HorizontalAlignment="Left" Height="253" VerticalAlignment="Top" Width="480" Source="Assets/shadow.png" Margin="439,54,0,0" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="180"/>
+            </Image.RenderTransform>
+        </Image>
+        <Grid HorizontalAlignment="Center" Height="600" VerticalAlignment="Center" Width="462" FocusVisualPrimaryBrush="{x:Null}" Margin="0,0,0,0">
+            <Image HorizontalAlignment="Left" Height="837" VerticalAlignment="Top" Width="466" Source="Assets/mainform.jpg" Opacity="0.95" RenderTransformOrigin="0,0"/>
+            <Grid HorizontalAlignment="Center" Height="110" Margin="0,10,0,0" VerticalAlignment="Top" Width="460"/>
+            <Grid HorizontalAlignment="Left" Height="480" VerticalAlignment="Top" Width="463" Grid.ColumnSpan="2">
+
+                <TextBox x:Name="Username" HorizontalAlignment="Left" Margin="218,116,0,0" VerticalAlignment="Top" Width="200" Height="29" PlaceholderText="Username"/>
+                <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="218,178,0,0" VerticalAlignment="Top" Width="200" Height="30" PlaceholderText="Password"/>
+                <Button x:Name="LoginIn" Content="LOGIN" HorizontalAlignment="Center" Margin="0,280,0,0" VerticalAlignment="Top" Width="200" Height="52" Background="#FFEA4B85" Foreground="White" Click="Login_Click" FontSize="24" FontWeight="Bold"/>
+                <TextBlock TextAlignment="Right" HorizontalAlignment="Left" Margin="11,116,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="182" FontSize="20" FontWeight="Bold"/>
+                <TextBlock TextAlignment="Right" HorizontalAlignment="Left" Margin="8,178,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="182" FontSize="20" FontWeight="Bold"/>
+                <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="137,35,0,0" Text="Login" TextWrapping="Wrap" VerticalAlignment="Top" Height="57" Width="182" FontSize="36" FontWeight="Bold"/>
+
+            </Grid>
+
+        </Grid>
+
+        <Image HorizontalAlignment="Left" Height="249" Margin="0,391,0,0" VerticalAlignment="Top" Width="563" Source="Assets/miku2.png"/>
+        <MediaElement Source="assets/music.mp3" AutoPlay="True" HorizontalAlignment="Left" Height="100" Margin="735,430,0,-50" VerticalAlignment="Top" Width="100"/>
+
+    </Grid>
+
+
+
+</Page>
