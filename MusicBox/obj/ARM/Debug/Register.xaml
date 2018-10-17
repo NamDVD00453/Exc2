@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="MusicBox.Register"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MusicBox"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="860" Height="480">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="480" Width="860" Opacity="0.99">
+
+        <Image Source="assets/background2.png" Opacity="0.4" Width="860" Height="480" Margin="2,0,-2,0"/>
+        <Image Source="assets/spectrum.gif" Width="860" Height="480" Opacity="0.1" />
+        <Grid HorizontalAlignment="Left" Height="480" VerticalAlignment="Top" Width="640" Grid.ColumnSpan="2">
+
+            <TextBox x:ConnectionId='2' x:Name="Username" HorizontalAlignment="Left" Margin="220,116,0,0" VerticalAlignment="Top" Width="200" Height="29" PlaceholderText="Username"/>
+            <PasswordBox x:ConnectionId='3' x:Name="Password" HorizontalAlignment="Left" Margin="220,166,0,0" VerticalAlignment="Top" Width="200" Height="30" PlaceholderText="Password"/>
+            <PasswordBox x:ConnectionId='4' x:Name="RetypePassword" HorizontalAlignment="Left" Margin="220,216,0,0" VerticalAlignment="Top" Width="200" Height="30" PlaceholderText="Re-type Password"/>
+            <TextBox x:ConnectionId='5' x:Name="Email" HorizontalAlignment="Left" Margin="220,266,0,0" VerticalAlignment="Top" Width="200" Height="29" PlaceholderText="Email" AutomationProperties.AcceleratorKey=""/>
+            <TextBox x:ConnectionId='6' x:Name="Fullname" HorizontalAlignment="Left" Margin="220,316,0,0" VerticalAlignment="Top" Width="200" Height="29" PlaceholderText="Full name" AutomationProperties.AcceleratorKey=""/>
+            <ComboBox x:ConnectionId='7' x:Name="Gender" HorizontalAlignment="Left" Margin="220,366,0,0" VerticalAlignment="Top" Width="200" Height="30">
+                <ComboBoxItem IsSelected="True">
+                    Male
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Female
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Other
+                </ComboBoxItem>
+            </ComboBox>
+            <Button x:ConnectionId='8' x:Name="Reg" Content="Register" HorizontalAlignment="Left" Margin="220,416,0,0" VerticalAlignment="Top" Width="200" Height="30" Background="#FFEA4B85" Foreground="White"                       />
+            <TextBlock TextAlignment="Right" HorizontalAlignment="Left" Margin="13,116,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="182" FontSize="18" FontWeight="Bold"/>
+            <TextBlock TextAlignment="Right" HorizontalAlignment="Left" Margin="10,166,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="182" FontSize="18" FontWeight="Bold"/>
+            <TextBlock TextAlignment="Right" HorizontalAlignment="Left" Margin="10,216,0,0" Text="Re-type Password" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="182" FontSize="18" FontWeight="Bold"/>
+            <TextBlock TextAlignment="Right" HorizontalAlignment="Left" Margin="10,266,0,0" Text="Email" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="182" FontSize="18" FontWeight="Bold"/>
+            <TextBlock TextAlignment="Right" HorizontalAlignment="Left" Margin="10,316,0,0" Text="Full name" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="182" FontSize="18" FontWeight="Bold"/>
+            <TextBlock TextAlignment="Right" HorizontalAlignment="Left" Margin="10,366,0,0" Text="Gender" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="182" FontSize="18" FontWeight="Bold"/>
+            <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="0,30,0,0" Text="Register new account" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="420" FontSize="24" FontWeight="Bold"/>
+            <TextBlock x:ConnectionId='9' x:Name="ErrorUsername" TextAlignment="Left" HorizontalAlignment="Left" Margin="440,116,-178,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="380" FontSize="18" FontWeight="Normal" Foreground="#FFFF525A" FontStyle="Italic"/>
+            <TextBlock x:ConnectionId='10' x:Name="ErrorPassword" TextAlignment="Left" HorizontalAlignment="Left" Margin="440,166,-178,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="380" FontSize="18" FontWeight="Normal" Foreground="#FFFF525A" FontStyle="Italic"/>
+            <TextBlock x:ConnectionId='11' x:Name="ErrorRetype" TextAlignment="Left" HorizontalAlignment="Left" Margin="440,216,-178,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="380" FontSize="18" FontWeight="Normal" Foreground="#FFFF525A" FontStyle="Italic"/>
+            <TextBlock x:ConnectionId='12' x:Name="ErrorEmail" TextAlignment="Left" HorizontalAlignment="Left" Margin="440,266,-178,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="380" FontSize="18" FontWeight="Normal" Foreground="#FFFF525A" FontStyle="Italic"/>
+            <TextBlock x:ConnectionId='13' x:Name="ErrorFullname" TextAlignment="Left" HorizontalAlignment="Left" Margin="440,316,-178,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="380" FontSize="18" FontWeight="Normal" Foreground="#FFFF525A" FontStyle="Italic"/>
+
+        </Grid>
+
+        <MediaElement Source="assets/music.mp3" AutoPlay="True" HorizontalAlignment="Left" Height="100" Margin="735,430,0,-50" VerticalAlignment="Top" Width="100"/>
+    </Grid>
+</Page>
+
